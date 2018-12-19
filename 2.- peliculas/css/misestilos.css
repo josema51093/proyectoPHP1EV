@@ -1,0 +1,186 @@
+/*FONT ROBOTO NORMAL*/
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/*FONT ROBOTO BOLD (NEGRITA)*/
+@font-face {
+  font-family: 'Roboto Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/*FONT ROBOTO ITALIC*/
+@font-face {
+  font-family: 'Roboto Italic';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xIIzI.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/*Fuente aplicada a toda la pagina*/
+body{
+	font-family: Roboto;
+}
+
+/*Margenes para los titulos (OPCIONALES)*/
+h1{
+	margin-left: 1%;
+	margin-top: 1%;
+}
+
+h2{
+	margin-left: 1%;
+	margin-top: 1%;
+}
+
+h3{
+	margin-left: 1%;
+	margin-top: 1%;	
+}
+
+table, tr, th, td{
+	border: 1px solid blue;
+	border-collapse: collapse;
+}
+
+table{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 10%;
+	text-align: center;
+}
+caption{
+	color: blue;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+thead{
+	background-color: #0007FFFF;
+	color: white;
+}
+
+tbody tr:nth-child(even){
+	background-color: #CCCCCC;
+}
+
+tbody tr:nth-child(odd){
+	background-color: #999999;
+}
+
+tbody tr:hover{
+	background-color: #FFFF66;
+}
+
+td{
+	width: 20%;
+}
+th{
+	color: white;
+	font-size: 20px;
+}
+
+nav{
+	display: flex;
+}
+
+nav ul{
+	background-color: red;
+	display: inline-flex;
+	width: 100%;
+	justify-content: space-around;
+	list-style-type: none;
+	
+	
+}
+
+nav ul li a{
+	color: white;
+}
+
+li a:hover{
+	color: grey;
+}
+
+footer{
+}
+
+main{
+	width: 50%;
+	margin-left: 25%;
+	background-color: red;
+	text-align: center;
+}
+
+figure{
+	width: 60%;
+	margin-left: 20%;
+}
+
+figcaption{
+	font-style: italic;
+	font-weight: bold;
+}
+
+section{
+	width: 80%;
+	margin-left: 10%;
+	background-color: #EEEEEE;
+}
+
+a{
+	color: blue;
+	font-weight: bold;
+}
+
+form{
+	font-size: 24px;
+	color: #0091D4;
+}
+
+img{
+	width: 200px;
+	height: 200px;
+}
+
+fieldset{
+	width: 70%;
+	margin-left: 15%;
+}
+
+fieldset legend{
+	color: blue;
+	font-weight: bold;
+	font-style: italic;
+}
+
+fieldset label{
+	color: blue;
+}
+
+fieldset textarea{
+	background-color: #EEEEEE;
+	color: blue;
+}
+
+.jord{
+	width: 10px;
+	height: 30px;
+	background-color: yellow;
+}
+
+.jam{
+	width: 10px;
+	height: 30px;
+	background-color: purple;
+}
+
+
