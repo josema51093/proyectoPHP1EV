@@ -3,7 +3,7 @@
  <html lang="en">
 	 <head>
 		 <meta charset="UTF-8">
-		 <title>Agenda de contactos</title>
+		 <title>Peliculas MONGODB</title>
 		 <link rel="stylesheet" href="css/misestilos.css">
 	 </head>
 	 <body>

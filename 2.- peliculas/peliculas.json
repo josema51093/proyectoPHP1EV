@@ -1,0 +1,54 @@
+{
+	"_id" : ObjectId("5c20f919eb5b6e2c7c006778"),
+	"Cartel" : "carteles/Pulp Fiction.jpg",
+	"Director" : "Quentin Tarantino",
+	"Genero" : "Thriller",
+	"Sinopsis" : "Las vidas de dos hombres de la mafia, un boxeador, la esposa de un gangster y un par de atracadores de restaurantes se entrelazan en cuatro relatos de violencia y redención                   \r\n                ",
+	"Titulo" : "Pulp Fiction",
+	"Year" : "1994"
+},
+{
+	"_id" : ObjectId("5c20f99beb5b6e2c7c006779"),
+	"Cartel" : "carteles/Dunkerque.jpg",
+	"Director" : "Christopher Nolan",
+	"Genero" : "Bélico",
+	"Sinopsis" : "Dunkerque trata sobre las cientos de miles de tropas británicas y aliadas que quedaron rodeadas por fuerzas del enemigo. Atrapadas en una playa con el mar cortando el paso, se enfrentan a una situación imposible mientras el enemigo se aproxima",
+	"Titulo" : "Dunkerque",
+	"Year" : "2017"
+},
+{
+	"_id" : ObjectId("5c20fa1beb5b6e2c7c00677a"),
+	"Cartel" : "carteles/Toy Story.jpg",
+	"Director" : "John Lasseter",
+	"Genero" : "Animación",
+	"Sinopsis" : "Un muñeco de un vaquero se siente desplazado y celoso cuando un nuevo muñeco de un hombre espacial le arrebata el puesto de juguete preferido de su dueño    ",
+	"Titulo" : "Toy Story",
+	"Year" : "1995"
+},
+{
+	"_id" : ObjectId("5c20faf9eb5b6e2c7c00677b"),
+	"Cartel" : "carteles/Psicosis.jpg",
+	"Director" : "Alfred Hitchcock",
+	"Genero" : "Terror",
+	"Sinopsis" : "Una secretaria de Phoenix  desfalca 40.000 dólares de uno de los clientes de su jefe y se da a la fuga.",
+	"Titulo" : "Psicosis",
+	"Year" : "1960"
+},
+{
+	"_id" : ObjectId("5c20fb97eb5b6e2c7c00677c"),
+	"Cartel" : "carteles/Singin' in the Rain.jpg",
+	"Director" : "Stanley Donen",
+	"Genero" : "Musical",
+	"Sinopsis" : "Una productora de cine mudo hace una difícil transición al sonido  ",
+	"Titulo" : "Singin' in the Rain",
+	"Year" : "1952"
+},
+{
+	"_id" : ObjectId("5c20fc2deb5b6e2c7c00677e"),
+	"Cartel" : "carteles/El Padrino.jpg",
+	"Director" : "Francis Ford Coppola",
+	"Genero" : "Gángsters",
+	"Sinopsis" : "El viejo patriarca de una familia de crimen organizado transmite el control de su imperio clandestino a su reticente hijo                    \r\n                ",
+	"Titulo" : "El Padrino",
+	"Year" : "1972"
+},

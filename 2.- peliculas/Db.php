@@ -1,17 +1,17 @@
 <?php
+	require 'vendor/autoload.php';
+
 	class  Db{
 		private static $conexion=NULL;
 		private function __construct (){}
  
 		public static function conectar(){
 
-			try {
-			    $dsn = "mysql:host=localhost;dbname=peliculas";
-			    self::$conexion = new PDO($dsn, "root", "");
-			    self::$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			} catch (PDOException $e){
-			    echo $e->getMessage();
-			}
+			//Se crea una conexion nueva con Mongo, usando para ello new
+			$conexion = new MongoDB\Client;
+
+			//Seleccionamos la base de datos a la que conectarnos
+			self::$conexion = $conexion->peliculas;
 			
 			return self::$conexion;
 		}		
