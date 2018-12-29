@@ -101,7 +101,6 @@
 
 			//Se crea el documento a actualizar
 			$documento = array(
-				"_id" => $unaPelicula->getId(),
 				"Titulo" => $unaPelicula->getTitulo(),
 				"Genero" => $unaPelicula->getGenero(),
 				"Director" => $unaPelicula->getDirector(),
@@ -110,25 +109,20 @@
 				"Cartel" => $unaPelicula->getCartel()
 			);
 
-			/*$coleccion->replaceOne(
-				['_id' => $unaPelicula->getId()],
-				['_id' => $unaPelicula->getId(), 'Titulo' => $unaPelicula->getTitulo(), 'Genero' => $unaPelicula->getGenero(), 'Director' => $unaPelicula->getDirector(), 'Year' => $unaPelicula->getYear(), 'Sinopsis' => $unaPelicula->getSinopsis(),'Cartel' => $unaPelicula->getCartel() ]
-			);*/
+			//INVESTIGAR COMO HACERLO CON SAVE
+			//$coleccion->save($documento);
+			
+			//Se crea un filtro donde guardar el id a buscar
+			$filtro = ['_id' => new MongoDB\BSON\ObjectId($unaPelicula->getId())];
 
-			$coleccion->save($documento);
+			//Se ejecuta updateOne a la coleccion seleccionada pasandole el filtro anterior y el documento a sustituir
+			$coleccion->updateOne($filtro, ['$set' => $documento]);
 			
 			/*echo "ID de la pelicula pasada: ".$unaPelicula->getId();
 			$result = $coleccion->findOne(['_id' => new \MongoDB\BSON\ObjectId($unaPelicula->getId())]);
 			$unaPel = new Pelicula($result["_id"], $result["Titulo"], $result["Genero"], $result["Director"], $result["Year"], $result["Sinopsis"], $result["Cartel"]);
 
 			echo "<br>ID de la pelicula pasada: ".$unaPel->getId();*/
-
-			//Se actualiza el nuevo objeto con update
-			/*$coleccion->updateOne( 
-				['_id' => $unaPelicula->getId()], 
-				['$set' => ['Titulo' => $unaPelicula->getTitulo(), 'Genero' => $unaPelicula->getGenero(), 'Director' => $unaPelicula->getDirector(), 'Year' => $unaPelicula->getYear(), 'Sinopsis' => $unaPelicula->getSinopsis(),'Cartel' => $unaPelicula->getCartel() ]],
-				['upsert' => false] );*/
-			/*$coleccion->update( array('_id' => $unaPelicula->getId()), $documento, array('upsert' => true) );*/
 			
 			//Se cierra la conexion con la bd
 			$db = null;
