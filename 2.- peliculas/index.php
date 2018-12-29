@@ -17,7 +17,7 @@ $listaPeliculas = BDPelicula::mostrar();
 	 <th>Year</th>
 	 <th>Sinopsis</th>
 	 <th>Cartel</th>
-	 <th>Criticas</th>
+	 <!-- <th>Criticas</th> -->
 	 <th>Actualizar</th>
 	 <th>Borrar</th>
  </tr>
@@ -32,7 +32,7 @@ $listaPeliculas = BDPelicula::mostrar();
 				<td><?php echo $pelicula->getYear() ?> </td>
 				<td><?php echo $pelicula->getSinopsis() ?></td>
 				<td><img src="<?php echo $pelicula->getCartel() ?>"></td>
-				<td><a href='manager.php?accion=criticas&id=<?php echo $pelicula->getId() ?>'>Ver criticas</a></td>
+				<!-- <td><a href='manager.php?accion=criticas&id=<?php echo $pelicula->getId() ?>'>Ver criticas</a></td> -->
 				<td><a href='manager.php?accion=actualizar&id=<?php echo $pelicula->getId() ?>'>Actualizar</a></td>
 				<td><a href='manager.php?accion=eliminar&id=<?php echo $pelicula->getId() ?>'>Eliminar</a></td>
 			</tr>

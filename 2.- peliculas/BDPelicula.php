@@ -38,8 +38,8 @@
 			//Seleccionamos la coleccion Pelicula
 			$coleccion = $db->Pelicula;
 
-			//Guardamos en la variable $busqueda el resultado devuelto de la busqueda
-			$busqueda = $db->find(['_id' => $unId]);
+			//Guardamos en la variable $busqueda el resultado devuelto de la busqueda (USAR findOne PARA QUE DEVUELVE UN SOLO VALOR, CON FIND DABA ERROR)
+			$busqueda = $coleccion->findOne( ["_id" => new \MongoDB\BSON\ObjectId($unId)] );
 
 			//Creamos el objeto Pelicula con los datos obtenidos de la bd
 			$unaPelicula = new Pelicula($busqueda["_id"], $busqueda["Titulo"], $busqueda["Genero"], $busqueda["Director"], $busqueda["Year"], $busqueda["Sinopsis"], $busqueda["Cartel"]);
@@ -93,28 +93,49 @@
 
 	//Modificar una pelicula pasandole un objeto pelicula con los valores a modificar
 	public static function modificar($unaPelicula){
-			$dbh=Db::conectar();
-			try{
-				// Prepare
-				$stmt = $dbh->prepare("UPDATE pelicula SET titulo=:titulo, genero=:genero, director=:director, year=:year, sinopsis=:sinopsis, cartel=:cartel WHERE id=:id");
-				
-				$stmt->bindValue(':id', $unaPelicula->getId());
-				$stmt->bindValue(':titulo', $unaPelicula->getTitulo());
-				$stmt->bindValue(':genero', $unaPelicula->getGenero());
-				$stmt->bindValue(':director', $unaPelicula->getDirector());
-				$stmt->bindValue(':year', $unaPelicula->getYear());
-				$stmt->bindValue(':sinopsis', $unaPelicula->getSinopsis());
-				$stmt->bindValue(':cartel', $unaPelicula->getCartel());
-				// Excecute
-				$stmt->execute();
-			} catch(PDOException $e){
-				echo $e->getMessage();
-			}
-				$dbh = null;
+			//Conectamos con la base de datos
+			$db=Db::conectar();
+
+			//Obtenemos la coleccion a tratar
+			$coleccion = $db->Pelicula;
+
+			//Se crea el documento a actualizar
+			$documento = array(
+				"_id" => $unaPelicula->getId(),
+				"Titulo" => $unaPelicula->getTitulo(),
+				"Genero" => $unaPelicula->getGenero(),
+				"Director" => $unaPelicula->getDirector(),
+				"Year" => $unaPelicula->getYear(),
+				"Sinopsis" => $unaPelicula->getSinopsis(),
+				"Cartel" => $unaPelicula->getCartel()
+			);
+
+			/*$coleccion->replaceOne(
+				['_id' => $unaPelicula->getId()],
+				['_id' => $unaPelicula->getId(), 'Titulo' => $unaPelicula->getTitulo(), 'Genero' => $unaPelicula->getGenero(), 'Director' => $unaPelicula->getDirector(), 'Year' => $unaPelicula->getYear(), 'Sinopsis' => $unaPelicula->getSinopsis(),'Cartel' => $unaPelicula->getCartel() ]
+			);*/
+
+			$coleccion->save($documento);
+			
+			/*echo "ID de la pelicula pasada: ".$unaPelicula->getId();
+			$result = $coleccion->findOne(['_id' => new \MongoDB\BSON\ObjectId($unaPelicula->getId())]);
+			$unaPel = new Pelicula($result["_id"], $result["Titulo"], $result["Genero"], $result["Director"], $result["Year"], $result["Sinopsis"], $result["Cartel"]);
+
+			echo "<br>ID de la pelicula pasada: ".$unaPel->getId();*/
+
+			//Se actualiza el nuevo objeto con update
+			/*$coleccion->updateOne( 
+				['_id' => $unaPelicula->getId()], 
+				['$set' => ['Titulo' => $unaPelicula->getTitulo(), 'Genero' => $unaPelicula->getGenero(), 'Director' => $unaPelicula->getDirector(), 'Year' => $unaPelicula->getYear(), 'Sinopsis' => $unaPelicula->getSinopsis(),'Cartel' => $unaPelicula->getCartel() ]],
+				['upsert' => false] );*/
+			/*$coleccion->update( array('_id' => $unaPelicula->getId()), $documento, array('upsert' => true) );*/
+			
+			//Se cierra la conexion con la bd
+			$db = null;
 		}
 
 		//Mostrar las criticas de una pelicula por ID
-		public static function mostrarCriticas($unId){
+		/*public static function mostrarCriticas($unId){
 			$dbh=Db::conectar();
 
 			try{
@@ -138,6 +159,6 @@
 			}
 			$dbh = null;
 			return $misCriticas;
-		}
+		}*/
 }
 ?>
