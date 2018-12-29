@@ -9,36 +9,46 @@ $listaPeliculas = BDPelicula::mostrar();
 
 ?>
 
-<table>
- <tr>
-	 <th>Titulo</th>
-	 <th>Genero</th>
-	 <th>Director</th>
-	 <th>Year</th>
-	 <th>Sinopsis</th>
-	 <th>Cartel</th>
-	 <!-- <th>Criticas</th> -->
-	 <th>Actualizar</th>
-	 <th>Borrar</th>
- </tr>
+<div class="container">
+	<div class="row">
+		<div class="table table-responsive table-hover">
+			<table class="text-center">
+				<thead>
+					<tr>
+						<th scope="col">Titulo</th>
+						<th scope="col">Genero</th>
+						<th scope="col">Director</th>
+						<th scope="col">Year</th>
+						<th scope="col">Sinopsis</th>
+						<th scope="col">Cartel</th>
+						<th scope="col">Actualizar</th>
+						<th scope="col">Borrar</th>
+					 </tr>
+				</thead>
+				<tbody>
+					<?php
+						//Recorremos el array con objetos Pelicula y lo vamos pintando 
+						foreach ($listaPeliculas as $pelicula) {?>
+								<tr>
+									<td class="align-middle"><?php echo $pelicula->getTitulo() ?></td>
+									<td class="align-middle"><?php echo $pelicula->getGenero()?> </td>
+									<td class="align-middle"><?php echo $pelicula->getDirector() ?></td>
+									<td class="align-middle"><?php echo $pelicula->getYear() ?> </td>
+									<td class="align-middle"><?php echo $pelicula->getSinopsis() ?></td>
+									<td><img src="<?php echo $pelicula->getCartel() ?>"></td>
+									<!-- <td><a href='manager.php?accion=criticas&id=<?php echo $pelicula->getId() ?>'>Ver criticas</a></td> -->
+									<td class="align-middle"><a href='manager.php?accion=actualizar&id=<?php echo $pelicula->getId() ?>'><button class="btn-primary">Actualizar</button></a></td>
+									<td class="align-middle"><a href='manager.php?accion=eliminar&id=<?php echo $pelicula->getId() ?>'><button class="btn-danger">Eliminar</button></a></td>
+								</tr>
+					<?php }?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+</div>
 
-<?php
-	//Recorremos el array con objetos Pelicula y lo vamos pintando 
-	foreach ($listaPeliculas as $pelicula) {?>
-			<tr>
-				<td><?php echo $pelicula->getTitulo() ?></td>
-				<td><?php echo $pelicula->getGenero()?> </td>
-				<td><?php echo $pelicula->getDirector() ?></td>
-				<td><?php echo $pelicula->getYear() ?> </td>
-				<td><?php echo $pelicula->getSinopsis() ?></td>
-				<td><img src="<?php echo $pelicula->getCartel() ?>"></td>
-				<!-- <td><a href='manager.php?accion=criticas&id=<?php echo $pelicula->getId() ?>'>Ver criticas</a></td> -->
-				<td><a href='manager.php?accion=actualizar&id=<?php echo $pelicula->getId() ?>'>Actualizar</a></td>
-				<td><a href='manager.php?accion=eliminar&id=<?php echo $pelicula->getId() ?>'>Eliminar</a></td>
-			</tr>
-<?php }?>
 
-</table>
 
 <?php
 
