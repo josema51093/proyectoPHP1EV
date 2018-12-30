@@ -21,6 +21,7 @@ $listaPeliculas = BDPelicula::mostrar();
 						<th scope="col">Year</th>
 						<th scope="col">Sinopsis</th>
 						<th scope="col">Cartel</th>
+						<th scope="col">Críticas</th>
 						<th scope="col">Actualizar</th>
 						<th scope="col">Borrar</th>
 					 </tr>
@@ -36,9 +37,12 @@ $listaPeliculas = BDPelicula::mostrar();
 									<td class="align-middle"><?php echo $pelicula->getYear() ?> </td>
 									<td class="align-middle"><?php echo $pelicula->getSinopsis() ?></td>
 									<td><img src="<?php echo $pelicula->getCartel() ?>"></td>
+									<td class="align-middle">
+										<a href="#"><button class="btn-success"><i class="fa fa-eye"></i></button></a>
+									</td>
 									<!-- <td><a href='manager.php?accion=criticas&id=<?php echo $pelicula->getId() ?>'>Ver criticas</a></td> -->
-									<td class="align-middle"><a href='manager.php?accion=actualizar&id=<?php echo $pelicula->getId() ?>'><button class="btn-primary">Actualizar</button></a></td>
-									<td class="align-middle"><a href='manager.php?accion=eliminar&id=<?php echo $pelicula->getId() ?>'><button class="btn-danger">Eliminar</button></a></td>
+									<td class="align-middle"><a href='manager.php?accion=actualizar&id=<?php echo $pelicula->getId() ?>'><button class="btn-primary"><i class="fa fa-repeat"></i></button></a></td>
+									<td class="align-middle"><a href='manager.php?accion=eliminar&id=<?php echo $pelicula->getId() ?>'><button class="btn-danger"><i class="fa fa-trash-o"></i></button></a></td>
 								</tr>
 					<?php }?>
 				</tbody>
