@@ -11,6 +11,13 @@
 	 <script type="`text/javascript" src="js/jquery.js"></script>
 	 <script type="`text/javascript" src="js/bootstrap.min.js"></script>
 	 <script type="`text/javascript" src="js/popper.min.js"></script>
+	 <!--SCRIPT PROPIO PARA VER CRITICAS -->
+	 <script>
+	 	function mostrar(cont){
+	 		var elemento = document.getElementById("collapseExample"+cont);
+	 		elemento.className="show";
+	 	}
+	 </script>
  	 </body>
  </html>
 

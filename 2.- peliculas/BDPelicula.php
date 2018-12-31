@@ -19,7 +19,7 @@
 
 			//Con un bucle foreach, se va sacando cada elemento de la coleccion y se crea un objeto
 			foreach ($busqueda as $pelicula) {
-				$unaPelicula = new Pelicula($pelicula["_id"], $pelicula["Titulo"], $pelicula["Genero"], $pelicula["Director"], $pelicula["Year"], $pelicula["Sinopsis"], $pelicula["Cartel"]);
+				$unaPelicula = new Pelicula($pelicula["_id"], $pelicula["Titulo"], $pelicula["Genero"], $pelicula["Director"], $pelicula["Year"], $pelicula["Sinopsis"], $pelicula["Cartel"], $pelicula["Criticas"]);
 			//Añadimos el objeto $unaPelicula a la lista de peliculas, para tener un array con todas las peliculas en objetos
 			$listaPeliculas[] = $unaPelicula;
 			}

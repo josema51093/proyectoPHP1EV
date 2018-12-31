@@ -7,8 +7,9 @@
 		private $year;
 		private $sinopsis;
 		private $cartel;
+		private $criticas;
 
-		function __construct($unId, $unTitulo, $unGenero, $unDirector, $unYear, $unaSinopsis, $unCartel){
+		function __construct($unId, $unTitulo, $unGenero, $unDirector, $unYear, $unaSinopsis, $unCartel, $unasCriticas=null){
 			$this->id = $unId;
 			$this->titulo = $unTitulo;
 			$this->genero = $unGenero;
@@ -16,8 +17,17 @@
 			$this->year = $unYear;
 			$this->sinopsis = $unaSinopsis;
 			$this->cartel = $unCartel;
+			$this->criticas = $unasCriticas;
 		}
 		//public function __construct(){}
+		
+		public function getCriticas(){
+			return $this->criticas;
+		}
+
+		public function SetCriticas($unasCriticas){
+			$this->criticas = $unasCriticas;
+		}
 
 		public function getId(){
 			return $this->id;
