@@ -3,9 +3,19 @@
 	"Cartel" : "carteles/Pulp Fiction.jpg",
 	"Criticas" : [
 		{
-		"Autor" : "ElMundo",
-		"Critica" : "Pelicula prueba 1",
+		"Autor" : "Chicago Sun-Times",
+		"Critica" : "Al igual que 'Ciudadano Kane', 'Pulp Fiction' está construido de tal manera no lineal, que se podría ver una docena de veces y no recordar lo que viene después.",
 		"Nota" : 9
+	},
+		{
+		"Autor" : "New York Times",
+		"Critica" : "Un triunfante y hábilmente desconcertante viaje a través de un submundo que surge enteramente de la imaginación madura el señor Tarantino, un paisaje de peligro, el choque, la hilaridad y el vibrante color local",
+		"Nota" : 10
+	},
+		{
+		"Autor" : "Rolling Stone",
+		"Critica" : "El nuevo King Kong de las películas de delincuencia ... la diversión extrema sin dejar rastro de la precaución, la complacencia o la corrección política para llenar sus 154 minutos deliciosamente morbosos",
+		"Nota" : 8.5
 	}
 	],
 	"Director" : "Quentin Tarantino",
@@ -20,7 +30,12 @@
 	"Criticas" : [
 		{
 		"Autor" : "ElMundo",
-		"Critica" : "Pelicula prueba 1",
+		"Critica" : "Lo que Dunkerque aporta a la historia del cine con sus escasas dos horas es impagable. La fotografía, el sonido y el montaje son inmejorables. El guión es perfecto. Es como si cogemos una película que roza las tres horas, le quitamos todo el relleno y dejamos una película 100% útil que nos mantiene despiertos de principio a fin.",
+		"Nota" : 10
+	},
+		{
+		"Autor" : "FilmAffinity",
+		"Critica" : "No te deja ir al baño. No quieres quitar la mirada de la pantalla para no perderte ningún detalle. El sonido ayuda a esa tensión desde el primer minuto. Excelente trabajo para un director que ya esta a la altura de sus ídolos kubrick y Spielberg",
 		"Nota" : 9
 	}
 	],
@@ -35,9 +50,19 @@
 	"Cartel" : "carteles/Toy Story.jpg",
 	"Criticas" : [
 		{
-		"Autor" : "ElMundo",
-		"Critica" : "Pelicula prueba 1",
+		"Autor" : "MundoCinefilo",
+		"Critica" : "Un ingenio en concepto, diseño y ejecución que se podía ver en una pantalla del tamaño de un sello postal y todavía quedar envuelto por su encanto. ",
+		"Nota" : 7
+	},
+		{
+		"Autor" : "GVTReviews",
+		"Critica" : "Uno de los muchos logros notables de Toy Story de 1995 es que introdujo no uno, sino dos personajes indelebles al panteón de la cultura popular: el muñeco vaquero Woody (Tom Hanks) y el guardián del espacio plástico Buzz Lightyear (Tim Allen).",
 		"Nota" : 9
+	},
+		{
+		"Autor" : "HobbyConsolas",
+		"Critica" : "Muy buena película para empezar Pixar y la saga de Toy Story, para mi una de las mejores películas de Pixar. ",
+		"Nota" : 8.5
 	}
 	],
 	"Director" : "John Lasseter",
@@ -51,8 +76,13 @@
 	"Cartel" : "carteles/Psicosis.jpg",
 	"Criticas" : [
 		{
-		"Autor" : "ElMundo",
-		"Critica" : "Pelicula prueba 1",
+		"Autor" : "New York Times",
+		"Critica" : "'Psicosis',la gran obra maestra por excelencia del cine de Alfred Hitchcock,¡que director! después de ver está película ya sabes porque le llaman 'El Maestro del Suspense',¡que miedo! Una película totalmente imprescindible",
+		"Nota" : 10
+	},
+		{
+		"Autor" : "ThrillerFilos",
+		"Critica" : "Un flim, muy importante e influyente. Una obra exquisita de Alfred Hitchcock. Las actuaciones, la banda sonora, hacen de este film una maravilla. ",
 		"Nota" : 9
 	}
 	],
@@ -67,9 +97,14 @@
 	"Cartel" : "carteles/Singin' in the Rain.jpg",
 	"Criticas" : [
 		{
-		"Autor" : "ElMundo",
-		"Critica" : "Pelicula prueba 1",
-		"Nota" : 9
+		"Autor" : "ElProfeta",
+		"Critica" : "Película que te hace estar feliz cada vez que la ves. Incluso cuando estoy triste. Larga vida a Gene kelly. ¿El mejor musical del cine? Muy probablemente. Sin duda el más memorable de la época dorada del cine con grandes musicales.",
+		"Nota" : 10
+	},
+		{
+		"Autor" : "20Minutos",
+		"Critica" : "Al ritmo de Broadway! Iconica,esa es la palabra para esta pelicula,una pelicula que marca un antes y un después en el cine en el que se trata el drama que sufrió muchas productoras,actores,guionistas etc cuando apareció la voz,una época fundamental explicada muy bien a base de muchos zapatazos,piruetas,bailes y cantos,la pelicula es un bombón,aunque puede parecer algo cansina.",
+		"Nota" : 7
 	}
 	],
 	"Director" : "Stanley Donen",
@@ -83,14 +118,24 @@
 	"Cartel" : "carteles/El Padrino.jpg",
 	"Criticas" : [
 		{
-		"Autor" : "ElMundo",
-		"Critica" : "Pelicula prueba 1",
-		"Nota" : 9
+		"Autor" : "Josema Perez",
+		"Critica" : "Lo siento pero si no te gusto esta película es porque eres un retrasado , ESTA PELÍCULA ES UNA OBRA DE ARTE. Todo lo que hay en esta es perfecto : perfecta dirección , perfecto guion, perfectos actores, perfecta música , perfecta fotografía , es simplemente perfecta.",
+		"Nota" : 10
 	},
 		{
-		"Autor" : "La Voz de Almeria",
-		"Critica" : "Pelicula prueba 2",
-		"Nota" : 7
+		"Autor" : "Cristian Navarro",
+		"Critica" : "Actores, dirección, música, fotografía, guión.... Nada falla en este peliculón. La escena final es espectacular, y nunca me canso de verla.l ",
+		"Nota" : 10
+	},
+		{
+		"Autor" : "Javier Guillen",
+		"Critica" : "Película muy entretenida, con muchos disparos y negocios sucios de la mafia, muy recomendable.",
+		"Nota" : 10
+	},
+		{
+		"Autor" : "Dani Caparrós",
+		"Critica" : "Menudo insulto al cine, no es merecedora de ningún galardón que tiene. No la recomiendo en absoluto.",
+		"Nota" : 3.5
 	}
 	],
 	"Director" : "Francis Ford Coppola",

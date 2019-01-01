@@ -17,6 +17,16 @@
 	 		var elemento = document.getElementById("collapseExample"+cont);
 	 		elemento.className="show";
 	 	}
+
+	 	function ocultar(cont){
+	 		var elemento = document.getElementById("collapseExample"+cont);
+	 		elemento.className="collapse";
+	 	}
+
+	 	function cerrar(cont){
+	 		var elemento = document.getElementById("collapseExample"+cont);
+	 		elemento.className="collapse";
+	 	}
 	 </script>
  	 </body>
  </html>
