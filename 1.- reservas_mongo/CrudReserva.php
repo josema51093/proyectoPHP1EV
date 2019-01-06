@@ -24,6 +24,49 @@
 			return $listaReservas;
 		}
 
+		//Mostrar reserva por id
+		//Recibe como parametro un id
+		public static function mostrarPorId($unId){
+			//Se conecta con la base de datos
+			$db=Db::conectar();
+
+			//Seleccionamos la coleccion Reservas
+			$coleccion = $db->Reservas;
+
+			//Guardamos en la variable $busqueda el resultado devuelto de la busqueda (USAR findOne PARA QUE DEVUELVE UN SOLO VALOR, CON FIND DABA ERROR)
+			$busqueda = $coleccion->findOne( ["_id" => new \MongoDB\BSON\ObjectId($unId)] );
+
+			//Creamos el objeto Reserva con los datos obtenidos de la bd
+			$unaReserva = new Reserva($busqueda["_id"], $busqueda["Apellidos"], $busqueda["Nombre"], $busqueda["Fecha"], $busqueda["Hora"], $busqueda["Comensales"]);
+
+			//Desconexion de la base de datos
+			$db = null;
+
+			//Se devuelve el objeto creado
+			return $unaReserva;
+		}
+
+		public static function mostrarPorApellidoFecha($unaFecha, $unosApellidos){
+			//Se conecta con la base de datos
+			$db=Db::conectar();
+
+			//Seleccionamos la coleccion Reservas
+			$coleccion = $db->Reservas;
+
+			//Se buscan las reservas que coincidan
+			$busqueda = $coleccion->find(['Fecha' => $unaFecha],['Apellidos' => $unosApellidos]);
+
+			$reservasApeFecha = [];
+
+			foreach ($busqueda as $documento) {
+				$miReserva = new Reserva($documento["_id"],$documento["Apellidos"],$documento["Nombre"],$documento["Fecha"],$documento["Hora"],$documento["Comensales"]);
+				$reservasApeFecha[]=$miReserva;
+			}
+
+			$bd=null;
+			return $reservasApeFecha;
+		}
+
 
 		// método para mostrar todas las reservas
 		public static function esPosible($unaReserva){
@@ -91,4 +134,34 @@
 
 		}
 
+		//Modificar una reserva pasandole un objeto reserva como parametro
+		public static function modificar($unaReserva){
+			//Conectamos con la base de datos
+			$db=Db::conectar();
+
+			//Obtenemos la coleccion a tratar
+			$coleccion = $db->Reservas;
+
+			//Se pasa la fecha al formato adecuado
+			$date = new DateTime($unaReserva->getFecha());
+			$fecha = $date->format('d/m/Y');
+
+			//Se crea el documento a actualizar con los parametros pasados
+			$documento = array(
+				"Apellidos" => $unaReserva->getApellidos(),
+				"Nombre" => $unaReserva->getNombre(),
+				"Fecha" => $fecha,
+				"Hora" => $unaReserva->getHora(),
+				"Comensales" => $unaReserva->getComensales()
+			);
+
+			//Se crea un filtro donde guardar el id a buscar
+			$filtro = ['_id' => new MongoDB\BSON\ObjectId($unaReserva->getId())];
+
+			//Se ejecuta updateOne a la coleccion seleccionada pasandole el filtro anterior y el documento a sustituir
+			$coleccion->updateOne($filtro, ['$set' => $documento]);
+
+			//Se cierra la conexion con la bd
+			$db = null;
+		}
 }

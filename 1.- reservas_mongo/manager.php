@@ -6,21 +6,20 @@
 	//Se comprueba que hemos pulsado actualizar o eliminar
 	if (isset($_GET['accion'])) {
 		if ($_GET['accion'] == "e") {
-			//Se elimina la película llamando al método correspondiente de BDPelicula
+			//Se elimina la reserva llamando al método correspondiente de CrudReserva
 			CrudReserva::eliminar($_GET['id']);
 			echo $_GET['id'];
 			header("Location: reservas.php");
 		} else if ($_GET['accion'] == "a") {
-			//Se pinta el formulario para actualizar la película, fichero actualizar.php
+			//Se pinta el formulario para actualizar la reserva, fichero actualizar.php
 			header("Location: actualizar.php?id=".$_GET['id']);
 		} 
 	}
 
-	//Se comprueba que hemos recibido los datos del formulario de insertar película
+	//Se comprueba que hemos recibido los datos del formulario de insertar reserva
 	if (isset($_POST['insertar'])) {
 		
-		$unaReserva = new Reserva(0,$_POST['apellidos'],$_POST['nombre'],$_POST['fecha'],
-							$_POST['hora'],$_POST['comensales']);
+		$unaReserva = new Reserva(0,$_POST['apellidos'],$_POST['nombre'],$_POST['fecha'], $_POST['hora'],$_POST['comensales']);
 
 		if (CrudReserva::insertar($unaReserva)) {
 			header("Location: reservas.php");
@@ -30,12 +29,9 @@
 		
 		
 	} else if (isset($_POST['actualizar'])) {
-		/*
-		$unaPelicula = new Pelicula($_POST['id'],$_POST['titulo'],$_POST['genero'],$_POST['director'],$_POST['year'],$_POST['sinopsis'], subir());
-
-		BDPelicula::modificar($unaPelicula);
-		header("Location: index.php");
-		*/
+		$reserva = new Reserva($_POST['id'],$_POST['apellidos'], $_POST['nombre'], $_POST['fecha'], $_POST['hora'], $_POST['comensales']);
+		CrudReserva::modificar($reserva);
+		header("Location: reservas.php");
 	}
 
 
