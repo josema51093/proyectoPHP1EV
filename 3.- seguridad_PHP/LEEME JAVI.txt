@@ -1,0 +1,9 @@
+Con la idea de facilitarte la corrección del ejercicio, te voy a indicar que días hay reservas:
+- El dia 14 de diciembre de 2018 es el dia en el que estan la mayoria de las reservas realizadas.
+- Tambien hay reservas los dias 15 de diciembre de 2018, 7 de enero de 2019 y 19 de enero de 2019
+
+Por otro lado, lo ultimo que pedias en el ejercicio, lo he hecho de tal forma que se tengan que indicar apellidos
+y fecha para realizar la busqueda (si pones solo un campo de ellos, no funcionará, que es la idea).
+De todas formas, dejo las dos formas de buscar las reservas (la que tenias hecha y la nueva que nos pides)
+
+Un saludo!
