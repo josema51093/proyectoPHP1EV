@@ -5,18 +5,18 @@
 
 	include "includes/cabecera.php";
 
+	//COMPROBACIONES PARA LA FECHA SOLO
 	//Sacamos la fecha del día o la que diga el formulario
 	if (!isset($_POST['fecha'])) {
 		$date = new DateTime();
-		//echo $date->format('d/m/Y');
 		$fecha = $date->format('d/m/Y');
 	} else {
 		$date = new DateTime($_POST['fecha']);
-		//echo $date->format('d/m/Y');
 		$fecha = $date->format('d/m/Y');
 	}
  	$listaReservas = CrudReserva::mostrar($fecha);
 
+ 	//COMPROBACIONES PARA LA FECHA Y APELLIDOS
  	//Sacamos las reservas que coincidan con apellidos y fecha indicados
  	if (!isset($_POST['enviarFechApe'])) {
 	} else {
@@ -24,9 +24,11 @@
 		$fecha = $date->format('d/m/Y');
 	}
 
+	//Se comprueba que los dos campos no esten vacios
 	if (!isset($_POST['apellidos']) || !isset($_POST['fechaApellidos'])) {
 	} else {
- 	$reservasApeFecha = CrudReserva::mostrarPorApellidoFecha($fecha, $_POST['apellidos']);
+		//Se guarda en $reservasApeFecha el resultado de la busqueda
+ 		$reservasApeFecha = CrudReserva::mostrarPorApellidoFecha($fecha, $_POST['apellidos']);
 	}
 ?>
 
@@ -35,13 +37,15 @@
 </header>
 
 <section>
+	<!--Formulario para busqueda por fecha-->
 	<h3>Busqueda por fecha</h3>
 	<form action="reservas.php" method="post">
 		<input type="date" name="fecha" value="<?php echo $fecha;?>">
 		<input type="submit" value="Cambiar Fecha" name="soloFecha">
 	</form>
+	<!--Formulario para busqueda por apellido y fecha-->
+	<h3>Busqueda por apellidos y fecha</h3>
 	<form action="reservas.php" method="post">
-		<h3>Busqueda por apellidos y fecha</h3>
 		<label>Apellidos:</label>
 		<input type="text" name="apellidos"><br>
 		<label>Fecha: </label>
@@ -52,8 +56,6 @@
 </section>
 
 <section>
-
-
 
 <table>
  <tr>
@@ -66,7 +68,9 @@
  </tr>
 
 <?php
+	//Se comprueba que no este vacia la variable que contiene la busqueda realizada por apellido y fecha
 	if (!empty($reservasApeFecha)) {
+		//Si no esta vacia, se recorre y se va mostrando por pantalla su contenido
 		foreach ($reservasApeFecha as $reserva) {?>
 			<tr>
 				<td><?php echo $reserva->getApellidos() ?></td>
@@ -77,8 +81,9 @@
 				<td><a href="manager.php?id=<?php echo $reserva->getId()?>&accion=e">x</a>   </td>
 			</tr>
 		<?php }
+	//Si esta vacia la variable, se procede a recorrer la busqueda devuelta por fecha
 	} else { 
-
+		//Se recorre las reservas obtenidas y se muestran
 		foreach ($listaReservas as $reserva) {?>
 			<tr>
 				<td><?php echo $reserva->getApellidos() ?></td>

@@ -15,11 +15,13 @@
 			$cursor = $coleccion->find(['Fecha' => $unaFecha]);
  			$listaReservas=[];
 
+ 			//Se recorren los resultados y se guardan en un nuevo objeto, que sera añadido al array $listaReservas
 		    foreach ($cursor as $documento) {
 		    	$miReserva = new Reserva($documento["_id"],$documento["Apellidos"],$documento["Nombre"],$documento["Fecha"],$documento["Hora"],$documento["Comensales"]);
 				$listaReservas[]=$miReserva;
 		    }
 
+		    //Desconexion con la bd
 			$bd=null;
 			return $listaReservas;
 		}
@@ -54,15 +56,18 @@
 			$coleccion = $db->Reservas;
 
 			//Se buscan las reservas que coincidan
-			$busqueda = $coleccion->find(['Fecha' => $unaFecha],['Apellidos' => $unosApellidos]);
+			$consulta = array('Apellidos' => $unosApellidos, "Fecha" => $unaFecha);
+			$busqueda = $coleccion->find($consulta);
 
 			$reservasApeFecha = [];
 
+			//Se recorren los resultados y se guardan en un nuevo objeto, que sera añadido al array $reservasApeFecha
 			foreach ($busqueda as $documento) {
 				$miReserva = new Reserva($documento["_id"],$documento["Apellidos"],$documento["Nombre"],$documento["Fecha"],$documento["Hora"],$documento["Comensales"]);
 				$reservasApeFecha[]=$miReserva;
 			}
 
+			//Desconexion con la bd
 			$bd=null;
 			return $reservasApeFecha;
 		}
@@ -97,8 +102,8 @@
 			//Buscamos todas las reservas
 			$coleccion->deleteOne(['_id' => new \MongoDB\BSON\ObjectId($idReserva)]);
 
-
-			$dbh=null;
+			//Desconexion con la bd
+			$bd=null;
 		}
 
 		//Método para insertar una reserva que recibe un objeto Pelicula
