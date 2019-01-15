@@ -6,4 +6,8 @@ Por otro lado, lo ultimo que pedias en el ejercicio, lo he hecho de tal forma qu
 y fecha para realizar la busqueda (si pones solo un campo de ellos, no funcionará, que es la idea).
 De todas formas, dejo las dos formas de buscar las reservas (la que tenias hecha y la nueva que nos pides)
 
+
+Respecto a este ejercicio 3, veras un archivo llamado index.php, el cual cargará el formulario para ingresar a la web de reservas. 
+En ese mismo index, se encuentran las pruebas realizadas con ejemplos de seguridad.
+
 Un saludo!
